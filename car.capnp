@@ -286,6 +286,9 @@ struct CarControl {
   cruiseControl @4 :CruiseControl;
   hudControl @5 :HUDControl;
 
+  vTargetFuture @8 :Float32;
+  lead @9 :Lead;
+
   struct Actuators {
     # range from 0.0 - 1.0
     gas @0: Float32;
@@ -338,6 +341,13 @@ struct CarControl {
       chimePrompt @7;
       chimeWarning2Repeat @8;
     }
+  }
+
+  struct Lead {
+    dRel @0 :Float32;
+    yRel @1 :Float32;
+    vRel @2 :Float32;
+    status @3 :Bool;
   }
 
   gasDEPRECATED @1 :Float32;
